@@ -1,5 +1,6 @@
 package java.hsx.singleton.hungry;
 
+/**饿汉式**/
 public class HungrySingleton {
 //    public static final HungrySingleton hungrySingleton = new HungrySingleton();
 

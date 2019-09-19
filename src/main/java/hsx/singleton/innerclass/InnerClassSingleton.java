@@ -1,5 +1,6 @@
 package java.hsx.singleton.innerclass;
 
+/**内部类   线程安全  懒汉式**/
 public class InnerClassSingleton {
     private InnerClassSingleton(){
         //防止被反射破坏
