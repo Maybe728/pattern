@@ -9,6 +9,8 @@ public class ThreadLocalSingleton {
             ThreadLocal.withInitial(() -> new ThreadLocalSingleton());
 
     public static ThreadLocalSingleton getInstance(){
+        String str="";
+
         return threadLocalSingleton.get();
     }
 }
