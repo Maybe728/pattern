@@ -1,4 +1,4 @@
-package java.hsx.singleton.register;
+package hsx.singleton.register;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

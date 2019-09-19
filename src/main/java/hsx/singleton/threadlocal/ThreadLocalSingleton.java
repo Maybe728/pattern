@@ -1,4 +1,4 @@
-package java.hsx.singleton.threadlocal;
+package hsx.singleton.threadlocal;
 
 /**每个独立线程内 单例**/
 public class ThreadLocalSingleton {

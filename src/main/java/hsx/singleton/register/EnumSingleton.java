@@ -1,4 +1,4 @@
-package java.hsx.singleton.register;
+package hsx.singleton.register;
 
 
 /**注册式单例   枚举写法  线程安全  饿汉式**/

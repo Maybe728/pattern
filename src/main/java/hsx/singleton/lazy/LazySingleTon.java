@@ -1,4 +1,4 @@
-package java.hsx.singleton.lazy;
+package hsx.singleton.lazy;
 
 public class LazySingleTon {
 

@@ -1,4 +1,4 @@
-package java.hsx.singleton.hungry;
+package hsx.singleton.hungry;
 
 /**饿汉式**/
 public class HungrySingleton {

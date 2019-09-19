@@ -1,4 +1,4 @@
-package java.hsx.singleton.innerclass;
+package hsx.singleton.innerclass;
 
 /**内部类   线程安全  懒汉式**/
 
