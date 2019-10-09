@@ -2,6 +2,7 @@ package hsx.streamDemo;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 
@@ -111,6 +112,33 @@ public class StreamDemo {
         //计算乘积
         double sum3 = cars.stream().map(Car::getPrice).reduce(1.00, (a1, b1) -> a1 * b1);
 
+
+        //我们使用 reduce 方法计算流中元素的总和，它有一个暗含的装箱成本。每个 Integer 都必须拆箱成一个原始类型，再进行求和。
+        //在这里，Stream API还提供了原始类型流特化，专门支持处理数值流的方法。
+        // IntStream, DoubleStream, LongStream,这种流中的元素都是原始数据类型，分别是 int，double，long
+        //所以上面代码就可以改成下面所示：
+        double sum4 = cars.stream().mapToDouble(Car::getPrice).sum();
+        //这里， mapToDouble 会从每个Car对象中提取价格（用一个 Double 表示），并返回一个 DoubleStream（而不是一个 Stream ）。
+        //然后你就可以调用 DoubleStream 接口中定义的 sum 方法，对价格求和了！
+        //请注意，如果流是空的，sum 默认返回 0 。
+        //DoubleStream 还支持其他的方便方法，如max、min、average 等。
+
+        /*数值范围
+        IntStream 与 LongStream 拥有 range 和 rangeClosed 方法用于数值范围处理
+
+        IntStream ： rangeClosed(int, int) / range(int, int)
+        LongStream ： rangeClosed(long, long) / range(long, long)
+        这两个方法的区别在于一个是闭区间，一个是半开半闭区间：
+
+        rangeClosed(1, 100) ：[1, 100]
+        range(1, 100) ：[1, 100)
+        我们可以利用 IntStream.rangeClosed(1, 100) 生成 1 到 100 的数值流*/
+
+        //求 1 到 10 的数值总和：
+        IntStream intStream = IntStream.rangeClosed(1, 10);
+        int sum5 = intStream.sum();
+
+
         //14. count()
         //返回流中元素个数，结果为 long 类型
 
@@ -122,6 +150,16 @@ public class StreamDemo {
         list.stream().forEach(System.out::println);
         //循环调用Mapper中的add方法
         //cars.stream().forEach(CarMapper::add);
+
+
+        //构建流
+
+        //详解collect
+
+        //并行
+
+        //效率
+
 
         return cars;
     }
