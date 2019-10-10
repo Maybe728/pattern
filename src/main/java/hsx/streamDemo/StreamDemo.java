@@ -72,18 +72,18 @@ public class StreamDemo {
 
         //9. anyMatch(Car -> boolean)
         //流中是否有一个元素匹配给定的 Car -> boolean 条件
-        //例子：是否存在一个 Car 对象的 color 等于 red5
-        boolean b = cars.stream().anyMatch(c -> c.getColor().equals("red5")); //true
+        //例子：是否存在一个 Car 对象的 color 等于 red5：true
+        boolean b = cars.stream().anyMatch(c -> c.getColor().equals("red5"));
 
         //10. allMatch(Car -> boolean)
         //流中是否所有元素都匹配给定的 Car -> boolean 条件
-        //例子：判断cars列表中所有的car对象的color等于red5
-        boolean d = cars.stream().allMatch(c -> c.getColor().equals("red5")); //false
+        //例子：判断cars列表中所有的car对象的color等于red5：false
+        boolean d = cars.stream().allMatch(c -> c.getColor().equals("red5"));
 
         //11. noneMatch(Car -> boolean)
         //流中是否没有元素匹配给定的 Car -> boolean 条件
-        //例子：判断cars列表中所有的car对象的colord都不等于red5
-        boolean e = cars.stream().noneMatch(c -> c.getColor().equals("red5")); //false
+        //例子：判断cars列表中所有的car对象的colord都不等于red5：false
+        boolean e = cars.stream().noneMatch(c -> c.getColor().equals("red5"));
 
         //12.findFirst和findAny
         // 通过名字，就可以看到，对这个集合的流，做一系列的中间操作后，
